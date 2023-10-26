@@ -18,7 +18,7 @@
 		<input type="text" name="userId"> <br>
 		<input type="text" name="userName"> <br>
 		<input type="submit" value="확인">
-	</form>
+	</form> 
 	
 	<hr>
 	
@@ -26,3 +26,18 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

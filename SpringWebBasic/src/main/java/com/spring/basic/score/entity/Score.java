@@ -2,7 +2,12 @@ package com.spring.basic.score.entity;
 
 import com.spring.basic.score.dto.ScoreRequestDTO;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /*
  Entity 클래스
@@ -10,27 +15,27 @@ import lombok.*;
  - DB 테이블 내에 존재하는 속성만을 필드로 가져야 합니다.
  - 상속이나 구현체 여서는 안되고, 존재하지 않는 컬럼값을 가지는 것도 안됩니다. (가장 pure한 객체)
  - 절대로 요청이나 응답값을 전달하는 클래스로 사용하지 않습니다. (DTO의 역할)
-*/
+ */
 
 @Setter @Getter @ToString
+@EqualsAndHashCode 
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
 public class Score {
 
-	private String strName; //학생 이름
-	private int kor, eng, math; //국, 영, 수 점수
-	
 	private int stuNum; //학번
+	private String stuName; //학생 이름
+	private int kor, eng, math; // 국, 영, 수 점수
+
 	private int total; //총점
 	private double average; //평균
 	private Grade grade; //학점
-	
+
 	public Score(ScoreRequestDTO dto) {
-		this.strName = dto.getName();
+		this.stuName = dto.getName();
 		changeScore(dto);
 	}
-	
+
 	public void changeScore(ScoreRequestDTO dto) {
 		this.kor = dto.getKor();
 		this.eng = dto.getEng();
@@ -54,7 +59,17 @@ public class Score {
 	}
 
 	private void calcTotalAndAvg() {
-		this.total = kor + eng + math;
-		this.average = total / 3.0;
+		this.total = this.kor + this.eng + this.math;
+		this.average = this.total / 3.0;
 	}
+
+
 }
+
+
+
+
+
+
+
+

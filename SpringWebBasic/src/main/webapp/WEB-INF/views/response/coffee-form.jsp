@@ -28,7 +28,7 @@
             margin: 20px auto;
         }
         .wrap .menu select {
-            width: 200px;
+            width: 250px;
             height: 50px;
             font-size: 28px;
             margin-top: 10px;
@@ -39,7 +39,7 @@
             clear: both;
         }
     </style>
-
+    
 </head>
 <body>
 
@@ -65,28 +65,26 @@
                 <label>
                     <button type="submit">주문하기</button>
                 </label>
-            </form>
-
-            
+            </form>          
 
         </div>
     </div>
     
-    <script type="text/javascript">
-    
+    <script>
+    	
     	const coffeePrice = {
-    			americano: 3000,
-    			cafeLatte: 4500,
-    			macchiato: 5000
+    		americano: 3000,
+    		cafeLatte: 4500,
+    		macchiato: 5000
     	};
     	
-    	//change: input이나 select 태그의 값이 변했을 때
+    	// change: input이나 select 태그의 값이 변했을 때
     	
     	const $menu = document.getElementById('menu-sel');
     	$menu.onchange = e => {
     		//커피를 선택하면 가격이 변해야 함!
-//    		console.log('이벤트 타켓: ', e.target.value);
-//    		console.log('변경된 커피값: ', coffeePrice[e.target.value]);
+    		//console.log('이벤트 타겟: ', e.target.value);
+    		//console.log('변경된 커피값: ', coffeePrice[e.target.value])
     		
     		const price = coffeePrice[e.target.value];
     		document.querySelector('.price-value').textContent = price;
@@ -95,11 +93,23 @@
     		$priceTag.value = price;
     		
     	}
-    	
-    	
     
     </script>
-
+    
+    
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
